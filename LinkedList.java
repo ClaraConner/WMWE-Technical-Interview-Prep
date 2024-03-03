@@ -64,6 +64,27 @@ public class LinkedList {
             currNode = currNode.next; 
         } 
     } 
+
+    public static void findKElement(LinkedList list){
+        int k = 3;
+        Node firstPointer = list.head;
+        Node secondPointer = list.head;
+
+        for (int i = 0; i < k; i++){
+            firstPointer = firstPointer.next;
+        }
+        while (firstPointer != null) { 
+            // Print the data at current node 
+            //System.out.print(firstPointer.data + " "); 
+    
+            // Go to next node 
+            firstPointer = firstPointer.next; 
+            secondPointer = secondPointer.next; 
+        } 
+
+        System.out.println("\nKnth element: " + secondPointer.data);
+
+    }
     
     // Driver code 
     public static void main(String[] args) 
@@ -89,5 +110,7 @@ public class LinkedList {
    
         // Print the LinkedList 
         printList(list); 
+
+        findKElement(list);
     } 
 }
